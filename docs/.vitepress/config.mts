@@ -11,13 +11,13 @@ export default defineConfig({
       { text: 'Screenshots', link: '/screenshots' },
       { text: 'Getting Started', link: '/installation' },
       { text: 'Theme development', link: '/get-start' },
-      { text: 'Components', link: '/component' },
-      { text: 'State_management', link: '/state' },
-      { text: 'Router', link: '/router' },
-      { text: 'Api Integration', link: '/api' },
-      { text: 'Test', link: '/test' },
-      { text: 'Deployment', link: '/deployment' },
-      { text: 'Examples', link: '/markdown-examples' }
+      // { text: 'Components', link: '/component' },
+      // { text: 'State_management', link: '/state' },
+      // { text: 'Router', link: '/router' },
+      // { text: 'Api Integration', link: '/api' },
+      // { text: 'Test', link: '/test' },
+      // { text: 'Deployment', link: '/deployment' },
+      // { text: 'Examples', link: '/markdown-examples' }
     ],
 
     sidebar: [
@@ -79,6 +79,15 @@ export default defineConfig({
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
+        ]
+      },
+      {
+        text: 'Usage',
+        items: [
+          { text: 'Authentication', link: '/authentication' },
+          { text: 'Components', link: '/components' },
+          { text: 'Pages', link: '/pages' },
           { text: 'Runtime API Examples', link: '/api-examples' },
         ]
       }
