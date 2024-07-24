@@ -79,6 +79,10 @@ export default defineConfig({
           { text: 'Authentication', link: '/authentication' },
           { text: 'Components', link: '/components' },
           { text: 'Pages', link: '/pages' },
+          { text: 'Users management', link: '/users' },
+          { text: 'Roles management', link: '/roles' },
+          { text: 'Permissions management', link: '/permissions' },
+          { text: 'Tickets management', link: '/tickets' },
         ]
       }
     ],
