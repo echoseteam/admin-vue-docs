@@ -1,23 +1,13 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "VitePress",
+  title: "Echose Admin",
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Screenshots', link: '/screenshots' },
-      { text: 'Getting Started', link: '/installation' },
-      { text: 'Theme development', link: '/get-start' },
-      // { text: 'Components', link: '/component' },
-      // { text: 'State_management', link: '/state' },
-      // { text: 'Router', link: '/router' },
-      // { text: 'Api Integration', link: '/api' },
-      // { text: 'Test', link: '/test' },
-      // { text: 'Deployment', link: '/deployment' },
-      // { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Getting Started', link: '/get-start' },
     ],
 
     sidebar: [
@@ -26,69 +16,50 @@ export default defineConfig({
         link: '/screenshots'
       },
       {
+        text: 'Prologue',
+        items: [
+          { text: 'Release Notes', link: '/releases.html' },
+          { text: 'File Structures ', link: '/structures.html' },
+        ]
+      },
+      {
         text: 'Getting Started',
         items: [
-          { text: 'Installation', link: '/installation' },
-          { text: 'Install using command line', link: '/command-line' },
-        ]
-      },
-      {
-        text: 'Theme development',
-        items: [
-          { text: 'Getting started', link: '/get-start' },
-          { text: 'Plugin structure', link: '/plugin-structure' },
-        ]
-      },
-      {
-        text: 'Components',
-        items: [
-          { text: 'Component', link: '/component' },
-        ]
-      },
-      {
-        text: 'State Management',
-        items: [
-          { text: 'State_management', link: '/state' },
+          { text: 'Installation', link: '/installation.html' },
+          { text: 'Configuration', link: '/configuration.html' },
         ]
       },
       {
         text: 'Routing',
         items: [
-          { text: 'Router', link: '/router' },
+          { text: 'Route', link: '/route.html' },
         ]
       },
       {
-        text: 'API',
+        text: 'Components',
         items: [
-          { text: 'Api Integration', link: '/api' },
+          { text: 'Input', link: '/input.html' },
+          { text: 'Table', link: '/table.html' },
+          { text: 'File upload', link: '/file-upload.html' },
+          { text: 'Alert message', link: '/alert.html' },
+          { text: 'Confirm dialog', link: '/confirm.html' },
+          { text: 'Notification', link: '/notification.html' },
+          { text: 'Icon', link: '/icon.html' },
+          { text: 'Card box', link: '/card-box.html' },
+          { text: 'Image', link: '/image.html' },
+          { text: 'Chart', link: '/chart.html' },
         ]
       },
       {
-        text: 'Testing',
+        text: 'Layout',
         items: [
-          { text: 'Test', link: '/test' },
-        ]
-      },
-      {
-        text: 'Deployment',
-        items: [
-          { text: 'Deployment', link: '/deployment' },
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ]
-      },
-      {
-        text: 'Usage',
-        items: [
-          { text: 'Authentication', link: '/authentication' },
-          { text: 'Components', link: '/components' },
-          { text: 'Pages', link: '/pages' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Profile', link: '/profile.html' },
+          { text: 'Login', link: '/login.html' },
+          { text: 'Register', link: '/regitser.html' },
+          { text: 'Forgot password', link: '/forgot-password' },
+          { text: 'Blank page', link: '/blank-page' },
+          { text: '404', link: '/404.html' },
+          { text: 'Error 500', link: '/500.html' },
         ]
       }
     ],
