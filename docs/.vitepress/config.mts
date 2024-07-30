@@ -58,7 +58,7 @@ export default defineConfig({
           { text: 'Register', link: '/regitser.html' },
           { text: 'Forgot password', link: '/forgot-password' },
           { text: 'Blank page', link: '/blank-page' },
-          { text: '404', link: '/404.html' },
+          { text: 'Error 404', link: '/404.html' },
           { text: 'Error 500', link: '/500.html' },
         ]
       }

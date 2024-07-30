@@ -1,106 +1,69 @@
 # Chart Component
-The Chart Component is a flexible and dynamic charting solution for Vue 3 applications, leveraging the power of Chart.js library.
 
-## Features
-- Integration with Chart.js for powerful and customizable charts
-- Support for various chart types (e.g., bar, line, pie)
-- Dynamic data updating with reactive props
-- Customizable color schemes
-- Responsive design with maintainable aspect ratio
-- Configurable axes and scales
-- Optional legend display
-- Tooltip support for enhanced data visibility
-- Easy integration with Vue 3 composition API
-- Automatic chart updates on data changes
+## Base usage
+![Chart-1 Screenshot](/images/chart1.png)
 
-## Example
-![Chart Screenshot](/images/chart.png)
-
-## Usage
 ``` vue
 <script setup>
-import { ref, watch, computed, onMounted } from 'vue'
-import {
-  Chart,
-  BarElement,
-  PointElement,
-  BarController,
-  LinearScale,
-  CategoryScale,
-  Tooltip
-} from 'chart.js'
-
-const props = defineProps({
-  data: {
-    type: Object,
-    required: true
-  }
-})
-
-const root = ref(null)
-
-let chart
-
-Chart.register(BarElement, PointElement, BarController, LinearScale, CategoryScale, Tooltip)
-
-const chartColors = [
-  'rgba(54, 162, 235, 0.8)',
-  'rgba(255, 99, 132, 0.8)',
-  'rgba(75, 192, 192, 0.8)'
-]
-
-const applyColors = (data) => {
-  return {
-    ...data,
-    datasets: data.datasets.map((dataset, index) => ({
-      ...dataset,
-      backgroundColor: chartColors[index % chartColors.length],
-      borderColor: chartColors[index % chartColors.length].replace('0.8', '1'),
-      borderWidth: 1
-    }))
-  }
-}
-
-onMounted(() => {
-  chart = new Chart(root.value, {
-    type: 'bar',
-    data: applyColors(props.data),
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          display: false
-        },
-        x: {
-          display: true
-        }
-      },
-      plugins: {
-        legend: {
-          display: false
-        }
-      }
-    }
-  })
-})
-
-const chartData = computed(() => props.data)
-
-watch(
-  chartData,
-  (newData) => {
-    if (chart) {
-      chart.data = applyColors(newData)
-      chart.update()
-    }
-  },
-  { deep: true }
-)
+import BarChart from '@/components/Charts/BarChart.vue'
+import LineChart from '@/components/Charts/LineChart.vue'
+import BubbleChart from '@/components/Charts/BubbleChart.vue'
+import PieChart from '@/components/Charts/PieChart.vue'
+import DoughnutChart from '@/components/Charts/DoughnutChart.vue'
 </script>
 
-<template>
-  <canvas ref="root" />
-</template>
+<div v-if="chartData">
+  <bar-chart :data="chartData" class="h-72" />
+  <line-chart :data="chartData" class="h-72" />
+  <pie-chart :data="chartData" class="h-72" />
+  <doughnut-chart :data="chartData" class="h-72" />
+  <bubble-chart :data="chartData" class="h-72" />
+</div>
 
 ```
+
+## Usage Example
+
+```vue
+<script setup>
+import BarChart from '@/components/Charts/BarChart.vue'
+</script>
+
+<div v-if="chartData">
+  <bar-chart :data="chartData" class="h-72" />
+</div>
+
+```
+
+## Height chart
+![BarChart Screenshot](/images/bar_chart.png)
+``` vue
+<div v-if="chartData">
+  <bar-chart :data="chartData" class="h-72" />
+</div>
+
+```
+
+## API
+
+### Attributes
+
+| Attribute | Description | Type | Accepted Values | Default |
+|-----------|-------------|------|-----------------|---------|
+| data | The data to be displayed in the chart | Object | — | — |
+
+### Classes
+
+| Class | Description |
+|-------|-------------|
+| h-72 | Sets the height of the chart to 72 units (18rem or typically 288px) |
+
+### Available Chart Components
+
+| Component | Description |
+|-----------|-------------|
+| BarChart | Renders a bar chart |
+| LineChart | Renders a line chart |
+| BubbleChart | Renders a bubble chart |
+| PieChart | Renders a pie chart |
+| DoughnutChart | Renders a doughnut chart |
