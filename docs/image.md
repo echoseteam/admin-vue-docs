@@ -1,51 +1,47 @@
 # Image Component
-The Image Component is a versatile and customizable Vue 3 component designed to display user avatars or images with various styling options.
 
-## Features
-- Displays user avatars or custom images
-- Supports rounded shape for avatar-style display
-- Responsive design with automatic width and height adjustment
-- Dark mode support with background color adaptation
-- Customizable image source through props
-- Fallback to API-generated avatars when no image is provided
-- Slot support for additional content or overlays
-- Computed property for reactive image source handling
-- Easy integration with various avatar APIs or custom image sources
+## Base usage
+![Image Screenshot](/images/img1.png)
 
-## Example
-![Image Screenshot](/images/images.png)
-
-## Usage
 ``` vue
 <script setup>
-import { computed } from 'vue'
+import { reactive } from 'vue'
+import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
+import FormField from '@/components/Forms/FormField.vue'
 
-const props = defineProps({
-  username: {
-    type: String,
-    default: null
-  },
-  avatar: {
-    type: String,
-    default: null
-  },
-  api: {
-    type: String,
-    default: 'avataaars'
-  }
+const customElementsForm = reactive({
+  checkbox: ['lorem'],
+  radio: 'one',
+  switch: ['one'],
+  file: null
 })
-
-const avatar = computed(() => props.avatar)
 </script>
 
-<template>
-  <div>
-    <img
-      :src="avatar"
-      class="rounded-full block h-auto w-full max-w-full bg-gray-100 dark:bg-slate-800"
-    />
-    <slot />
-  </div>
-</template>
+<FormField label="Avatar">
+  <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+</FormField>
+
+```
+
+## Image Preview
+![Image-1 Screenshot](/images/img2.png)
+
+``` vue
+<script setup>
+import { reactive } from 'vue'
+import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
+import FormField from '@/components/Forms/FormField.vue'
+
+const customElementsForm = reactive({
+  checkbox: ['lorem'],
+  radio: 'one',
+  switch: ['one'],
+  file: null
+})
+</script>
+
+<FormField label="Avatar">
+  <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+</FormField>
 
 ```

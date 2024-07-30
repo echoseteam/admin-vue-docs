@@ -1,24 +1,7 @@
 # Login Layout
-The Login Layout component is a responsive and user-friendly authentication interface for Vue 3 applications. It provides a clean and modern design for user login, combining form functionality with an attractive visual layout.
 
-## Features
-- Responsive design with a two-column layout on larger screens, collapsing to single column on mobile
-- Clean and modern user interface with a welcoming message
-- Input fields for email and password with proper autocomplete attributes
-- Remember me checkbox for persistent login
-- Forgot password link for easy password recovery
-- Login button with full width design
-- Registration link for new users
-- Visual branding element with logo and application name (on larger screens)
-- Form validation and submission handling
-- Integration with Vue Router for navigation
-- Utilizes reusable components for consistent styling and functionality
-- Dark mode support (implied through the use of utility classes)
-
-## Example
+## Base Usage
 ![Login Screenshot](/images/login.png)
-
-## Usage
 ``` vue
 <script setup>
 import { reactive } from 'vue'
