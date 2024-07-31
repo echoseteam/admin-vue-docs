@@ -1,23 +1,7 @@
 # Forgot Password Layout
-The Forgot Password Layout component is a user-friendly interface for password recovery in Vue 3 applications. It provides a clean, simple design with a split-screen layout, focusing on the essential task of initiating a password reset.
 
-## Features
-- Responsive design with a two-column layout on extra-large screens, collapsing to single column on smaller screens
-- Left side features a full-height background image (hidden on smaller screens)
-- Right side contains the password reset form
-- Clear instructions for the user on the password reset process
-- Input field for email with proper autocomplete attribute
-- Send Reset Link button for form submission
-- Back to Login button for easy navigation to the login page
-- Form validation and submission handling
-- Integration with Vue Router for navigation
-- Utilizes reusable components for consistent styling and functionality
-- Centered content layout for better focus and readability
-- Dark mode support (implied through the use of utility classes)
-## Example
+## Base Usage
 ![Forgot Password Screenshot](/images/forgotpassword.png)
-
-## Usage
 ``` vue
 <script setup>
 import { reactive } from 'vue'

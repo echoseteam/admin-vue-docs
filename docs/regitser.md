@@ -1,24 +1,7 @@
 # Register Layout
-The Register Layout component is a comprehensive and responsive user registration interface for Vue 3 applications. It offers a clean, modern design with a split-screen layout, combining form functionality with an attractive visual element.
 
-## Features
-- Responsive design with a two-column layout on larger screens, collapsing to single column on mobile
-- Left side features a full-height background image (hidden on mobile)
-- Right side contains the registration form
-- Input fields for name, email, and password with proper autocomplete attributes
-- Terms of Service agreement checkbox
-- Navigation buttons (Back and Submit)
-- Link to login page for existing users
-- Social media registration options (Google and Facebook)
-- Form validation and submission handling
-- Integration with Vue Router for navigation
-- Utilizes reusable components for consistent styling and functionality
-- Dark mode support (implied through the use of utility classes)
-
-## Example
+## Base Usage
 ![Register Screenshot](/images/register.png)
-
-## Usage
 ``` vue
 <script setup>
 import { RouterLink } from 'vue-router'
