@@ -10,10 +10,9 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Screenshots', link: '/screenshots' },
       { text: 'Getting Started', link: '/installation' },
-      { text: 'Theme development', link: '/get-start' },
-      // { text: 'Components', link: '/component' },
+      { text: 'Components', link: '/component' },
       // { text: 'State_management', link: '/state' },
-      // { text: 'Router', link: '/router' },
+      { text: 'Router', link: '/router' },
       // { text: 'Api Integration', link: '/api' },
       // { text: 'Test', link: '/test' },
       // { text: 'Deployment', link: '/deployment' },
@@ -33,16 +32,15 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Theme development',
-        items: [
-          { text: 'Getting started', link: '/get-start' },
-          { text: 'Plugin structure', link: '/plugin-structure' },
-        ]
-      },
-      {
         text: 'Components',
         items: [
           { text: 'Component', link: '/component' },
+          { text: 'Table', link: '/component-table' },
+          { text: 'Button', link: '/component-button' },
+          { text: 'Pagination', link: '/component-pagination' },
+          { text: 'Notification', link: '/component-notification' },
+          { text: 'Form', link: '/component-form' },
+          { text: 'Charts', link: '/component-chart' },
         ]
       },
       {
@@ -76,19 +74,15 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ]
-      },
-      {
         text: 'Usage',
         items: [
           { text: 'Authentication', link: '/authentication' },
           { text: 'Components', link: '/components' },
           { text: 'Pages', link: '/pages' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Users management', link: '/users' },
+          { text: 'Roles management', link: '/roles' },
+          { text: 'Permissions management', link: '/permissions' },
+          { text: 'Tickets management', link: '/tickets' },
         ]
       }
     ],
