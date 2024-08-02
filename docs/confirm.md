@@ -6,7 +6,7 @@
 ``` vue
 <script setup>
 import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+import { EchoseAlert } from '@/plugins/EchoseAlert'
 
 const handleConfirmClick = () => {
   EchoseAlert.fire({
@@ -17,8 +17,9 @@ const handleConfirmClick = () => {
 }
 </script>
 
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
-
+<template>
+  <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick"/>
+</template>
 ```
 
 ## Destroy on Close
@@ -38,7 +39,9 @@ const handleConfirmClick = () => {
 }
 </script>
 
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+<template>
+  <BaseButton color="info" label="Notice message" outline @click="handleConfirmClick"/>
+</template>
 
 ```
 

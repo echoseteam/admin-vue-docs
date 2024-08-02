@@ -13,25 +13,24 @@ import {
         mdiCheckCircle,
       } from '@mdi/js'
 </script>
-<AlertMessage type="info" :icon="mdiInformationSlabCircle">
-  <strong>info!</strong> Sample alert message type info
-</AlertMessage>
 
-<AlertMessage type="warning" :icon="mdiAlert  ">
-  <strong>warning!</strong> Sample alert message type warning
-</AlertMessage>
+<template>
+  <AlertMessage type="info" :icon="mdiInformationSlabCircle">
+    <strong>info!</strong> Sample alert message type info
+  </AlertMessage>
 
-<AlertMessage type="danger" :icon="mdiAlertCircle">
-  <strong>danger!</strong> Sample alert message type danger
-</AlertMessage>
+  <AlertMessage type="warning" :icon="mdiAlert  ">
+    <strong>warning!</strong> Sample alert message type warning
+  </AlertMessage>
 
-<AlertMessage type="success" :icon="mdiCheckCircle ">
-  <strong>success!</strong> Sample alert message type success
-</AlertMessage>
+  <AlertMessage type="danger" :icon="mdiAlertCircle">
+    <strong>danger!</strong> Sample alert message type danger
+  </AlertMessage>
 
-<AlertMessage type="contrast" :icon="mdiMonitorCellphone">
-  <strong>contrast!</strong> Sample alert message type contrast
-</AlertMessage>
+  <AlertMessage type="success" :icon="mdiCheckCircle ">
+    <strong>success!</strong> Sample alert message type success
+  </AlertMessage>
+</template>
 
 ```
 
@@ -48,25 +47,25 @@ import {
         mdiCheckCircle,
       } from '@mdi/js'
 </script>
-<AlertMessage type="info" :icon="mdiInformationSlabCircle">
-  <strong>info!</strong> Sample alert message type info
-</AlertMessage>
 
-<AlertMessage type="warning" :icon="mdiAlert  ">
-  <strong>warning!</strong> Sample alert message type warning
-</AlertMessage>
+<template>
+  <AlertMessage type="info" :icon="mdiInformationSlabCircle">
+    <strong>info!</strong> Sample alert message type info
+  </AlertMessage>
 
-<AlertMessage type="danger" :icon="mdiAlertCircle">
-  <strong>danger!</strong> Sample alert message type danger
-</AlertMessage>
+  <AlertMessage type="warning" :icon="mdiAlert  ">
+    <strong>warning!</strong> Sample alert message type warning
+  </AlertMessage>
 
-<AlertMessage type="success" :icon="mdiCheckCircle ">
-  <strong>success!</strong> Sample alert message type success
-</AlertMessage>
+  <AlertMessage type="danger" :icon="mdiAlertCircle">
+    <strong>danger!</strong> Sample alert message type danger
+  </AlertMessage>
 
-<AlertMessage type="contrast" :icon="mdiMonitorCellphone">
-  <strong>contrast!</strong> Sample alert message type contrast
-</AlertMessage>
+  <AlertMessage type="success" :icon="mdiCheckCircle ">
+    <strong>success!</strong> Sample alert message type success
+  </AlertMessage>
+</template>
+
 
 ```
 

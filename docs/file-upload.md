@@ -17,9 +17,11 @@ const customElementsForm = reactive({
 })
 </script>
 
-<FormField label="Avatar">
-  <FormFilePicker v-model="customElementsForm.file" label="Upload" />
-</FormField>
+<template>
+  <FormField label="Avatar">
+    <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+  </FormField>
+</template>
 
 ```
 

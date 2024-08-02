@@ -8,39 +8,41 @@
 import { ref, computed } from 'vue'
 import EchoseTable from '@/components/Tables/Table.vue'
 import Image from '@/components/Image.vue'
+import BaseButtons  from '@components/BaseButtons.vue'
 </script>
 
-<EchoseTable
-  :items="paginatedProducts"
-  :headers="tableColumns"
-  checkbox
-  class="w-full min-w-full"
-  @sort-change="sortChange"
->
-  <template #action="{ item }">
-    <BaseButtons type="justify-start lg:justify-end" no-wrap>
-      <BaseButton
-        color="default"
-        :icon="mdiSquareEditOutline"
-        small
-      />
-      <BaseButton
-        color="danger"
-        :icon="mdiTrashCan"
-        icon-size="18"
-        small
-        @click="handleDeleteClick(item.id)"
-      />
-    </BaseButtons>
-  </template>
-  <template #image="{ item }">
-    <div class="text-center">
-      <Image :src="item.image" class="w-10 h-10" />
-    </div>
-  </template>
-  <template #price="{ item }"> ${{ item.price.toFixed(2) }} </template>
-</EchoseTable>
-
+<template>
+  <EchoseTable
+    :items="paginatedProducts"
+    :headers="tableColumns"
+    checkbox
+    class="w-full min-w-full"
+    @sort-change="sortChange"
+  >
+    <template #action="{ item }">
+      <BaseButtons type="justify-start lg:justify-end" no-wrap>
+        <BaseButton
+          color="default"
+          :icon="mdiSquareEditOutline"
+          small
+        />
+        <BaseButton
+          color="danger"
+          :icon="mdiTrashCan"
+          icon-size="18"
+          small
+          @click="handleDeleteClick(item.id)"
+        />
+      </BaseButtons>
+    </template>
+    <template #image="{ item }">
+      <div class="text-center">
+        <Image :src="item.image" class="w-10 h-10" />
+      </div>
+    </template>
+    <template #price="{ item }"> ${{ item.price.toFixed(2) }} </template>
+  </EchoseTable>
+ </template>
 ```
 
 ## Table width checkall
@@ -51,13 +53,15 @@ import Image from '@/components/Image.vue'
 import EchoseTable from '@/components/Tables/Table.vue'
 </script>
 
-<EchoseTable
-  :items="paginatedProducts"
-  :headers="tableColumns"
-  checkbox
-  class="w-full min-w-full"
-  @sort-change="sortChange"
->
+<template>
+  <EchoseTable
+    :items="paginatedProducts"
+    :headers="tableColumns"
+    checkbox
+    class="w-full min-w-full"
+    @sort-change="sortChange"
+  >
+</template>
 
 ```
 
@@ -78,14 +82,15 @@ const sortChange = (event) => {
 }
 </script>
 
-<EchoseTable
-  :items="paginatedProducts"
-  :headers="tableColumns"
-  checkbox
-  class="w-full min-w-full"
-  @sort-change="sortChange"
->
-
+<template>
+  <EchoseTable
+    :items="paginatedProducts"
+    :headers="tableColumns"
+    checkbox
+    class="w-full min-w-full"
+    @sort-change="sortChange"
+  >
+</template>
 ```
 ## API
 ### Attributes

@@ -7,11 +7,18 @@
 <script setup>
 import FormField from '@/components/Forms/FormField.vue'
 import FormControl from '@/components/Forms/FormControl.vue'
+import { ref } from 'vue'
+
+const form = ref({
+    'name': ''
+})
 </script>
 
-<FormField label="Fullname">
-  <FormControl v-model="form.name" />
-</FormField>
+<template>
+    <FormField label="Fullname">
+        <FormControl v-model="form.name" />
+    </FormField>
+</template>
 
 ```
 
@@ -23,6 +30,8 @@ Make the Input clearable with the clearable attribute
 import { ref } from 'vue'
 import FormField from '@/components/Forms/FormField.vue'
 import FormControl from '@/components/Forms/FormControl.vue'
+import { mdiMagnify } from '@mdi/js';
+
 const searchQuery = ref('')
 
 const handleClear = () => {
@@ -48,16 +57,24 @@ const handleClear = () => {
 ![Input date Screenshot](/images/input_date.png)
 ``` vue
 <script setup>
+import { ref } from 'vue';
 import FormField from '@/components/Forms/FormField.vue'
 import FormControl from '@/components/Forms/FormControl.vue'
+
+const form = ref({
+  start_date: '',
+  due_date: ''
+});
 </script>
 
-<FormField label="Start date" class="flex-1">
-  <FormControl v-model="form.start_date" type="date" />
-</FormField>
-<FormField label="Due date" class="flex-1">
-  <FormControl v-model="form.due_date" type="date" />
-</FormField>
+<template>
+    <FormField label="Start date" class="flex-1">
+      <FormControl v-model="form.start_date" type="date" />
+    </FormField>
+    <FormField label="Due date" class="flex-1">
+      <FormControl v-model="form.due_date" type="date" />
+    </FormField>
+</template>
 
 ```
 
@@ -67,13 +84,20 @@ import FormControl from '@/components/Forms/FormControl.vue'
 
 ``` vue
 <script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import Editor from '@/components/Forms/VueQuillEditor.vue'
+import { ref } from 'vue';
+import FormField from '@/components/Forms/FormField.vue';
+import Editor from '@/components/Forms/VueQuillEditor.vue';
+
+const form = ref({
+  description: ''
+});
 </script>
 
-<FormField label="Description">
-  <Editor v-model="form.description" />
-</FormField>
+<template>
+  <FormField label="Description">
+    <Editor v-model="form.description" />
+  </FormField>
+</template>
 
 ```
 
@@ -83,23 +107,34 @@ import Editor from '@/components/Forms/VueQuillEditor.vue'
 
 ``` vue
 <script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import Editor from '@/components/Forms/VueQuillEditor.vue'
+import { ref } from 'vue';
+import FormField from '@/components/Forms/FormField.vue';
+import FormControl from '@/components/Forms/FormControl.vue';
+
+const form = ref({
+  assign_to: ''
+});
+
+const assignOptions = ref([
+  { value: 'user1', label: 'User 1' },
+  { value: 'user2', label: 'User 2' },
+]);
 </script>
 
-<FormField label="Assign to">
-  <FormControl
-    v-model="form.assign_to"
-    :options="assignOptions"
-    type="select"
-    placeholder="Select assignee"
-  >
-    <option value="">Select assignee</option>
-    <option v-for="option in assignOptions" :key="option.value" :value="option.value">
-      {{ option.label }}
-    </option>
-  </FormControl>
-</FormField>
+<template>
+  <FormField label="Assign to">
+    <FormControl
+      v-model="form.assign_to"
+      type="select"
+      placeholder="Select assignee"
+    >
+      <option value="">Select assignee</option>
+      <option v-for="option in assignOptions" :key="option.value" :value="option.value">
+        {{ option.label }}
+      </option>
+    </FormControl>
+  </FormField>
+</template>
 
 ```
 
