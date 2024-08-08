@@ -1,96 +1,78 @@
 # Car-box Component
-The Card-box Component is a versatile UI element in Vue 3, designed to display important information or statistics in a compact and visually appealing card format.
 
-## Features
-- Flexible display with icon, number, and label
-- Customizable trend indicator
-- Optional settings button for additional actions
-- Color customization for icon and text
-- Responsive layout using BaseLevel component
-- Integration with Material Design Icons
-- Dark mode support
-- Prop-based configuration for easy customization
-- Ability to append additional numbers or text
-## Example
-![Car box Screenshot](/images/car-box.png)
+## Base usage
+![Card Screenshot](/images/card.png)
 
-## Usage
 ``` vue
 <script setup>
-import { mdiCog } from '@mdi/js'
-import CardBox from '@/components/CardBox.vue'
-import BaseIcon from '@/components/Icons/BaseIcon.vue'
-import BaseLevel from '@/components/BaseLevel.vue'
-import PillTagTrend from '@/components/PillTagTrend.vue'
-import BaseButton from '@/components/Forms/BaseButton.vue'
+import CardBoxWidget from '@/components/CardBoxWidget.vue'
+import {mdiCartOutline, mdiAccountBoxOutline} from '@mdi/js'
+</script>
+<template>
+  <CardBoxWidget
+    trend="12%"
+    trend-type="down"
+    color="text-blue-500"
+    :icon="mdiCartOutline"
+    :number="7770"
+    prefix="$"
+    label="Sales"
+    rounded="rounded-2xl"
+  />
 
-defineProps({
-  number: {
-    type: Number,
-    default: 0
-  },
-  icon: {
-    type: String,
-    default: null
-  },
-  prefix: {
-    type: String,
-    default: null
-  },
-  suffix: {
-    type: String,
-    default: null
-  },
-  label: {
-    type: String,
-    default: null
-  },
-  color: {
-    type: String,
-    default: null
-  },
-  trend: {
-    type: String,
-    default: null
-  },
-  trendType: {
-    type: String,
-    default: null
-  },
-  showSetting: {
-    type: Boolean,
-    default: false
-  },
-  appendedNumber: {
-    type: [Number, String],
-    default: 0
-  }
-})
+  <CardBoxWidget
+    trend="9%"
+    trend-type="up"
+    color="text-cyan-400"
+    :icon="mdiAccountBoxOutline"
+    :number="160697"
+    label="Leads"
+    rounded="rounded-2xl"
+  />
+</template>
+```
+
+## Simple card
+![Simple Card](/images/simple_card.png)
+
+```vue
+<script setup>
+  import CardBoxWidget from '@/components/CardBoxWidget.vue'
 </script>
 
 <template>
-  <CardBox>
-    <BaseLevel v-if="trend" class="mb-3" mobile>
-      <PillTagTrend :trend="trend" :trend-type="trendType" small />
-      <BaseButton
-        v-if="showSetting"
-        :icon="mdiCog"
-        icon-w="w-4"
-        icon-h="h-4"
-        color="lightDark"
-        small
-      />
-    </BaseLevel>
-    <BaseLevel mobile>
-      <div>
-        <h3 class="text-lg leading-tight text-gray-500 dark:text-slate-400">
-          {{ label }}
-        </h3>
-        <span class="text-2xl ml-1">{{ appendedNumber }}</span>
-      </div>
-      <BaseIcon v-if="icon" :path="icon" size="48" w="" h="h-16" :class="color" />
-    </BaseLevel>
-  </CardBox>
+  <CardBoxClient
+    v-for="client in clientBarItems"
+    :key="client.id"
+    :name="client.name"
+    :login="client.login"
+    :date="client.created"
+    :progress="client.progress"
+  />
 </template>
-
 ```
+
+## API
+
+### Attributes
+
+| Attribute | Description | Type | Accepted Values | Default |
+|-----------|-------------|------|-----------------|---------|
+| trend | Trend percentage | string | — | — |
+| trend-type | Type of trend | string | 'up', 'down' | — |
+| color | Text color class | string | Any valid Tailwind color class | — |
+| icon | Icon path from @mdi/js | string | — | — |
+| number | Main number to display | number | — | — |
+| prefix | Prefix for the number (e.g. currency symbol) | string | — | — |
+| label | Label text | string | — | — |
+| rounded | CSS class for border radius | string | Any valid Tailwind rounded class | — |
+| name | Client name (for CardBoxClient) | string | — | — |
+| login | Client login (for CardBoxClient) | string | — | — |
+| date | Client creation date (for CardBoxClient) | string | — | — |
+| progress | Client progress (for CardBoxClient) | number | — | — |
+
+### Slots
+
+| Name | Description |
+|------|-------------|
+| default | Default slot for custom content |

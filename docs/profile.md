@@ -1,22 +1,8 @@
 # Profile Layout
-The Profile Layout component is a comprehensive and responsive profile management interface for Vue 3 applications. It combines user information display with editable form fields, providing a seamless user experience for viewing and updating profile details.
 
-## Features
-- Two-column grid layout, collapsing to single column on mobile devices
-- User profile card with avatar, name, and status information
-- Editable profile form with various input types
-- Real-time data binding with Vuex store integration
-- Breadcrumb navigation for easy site traversal
-- Avatar upload functionality
-- Responsive design with adaptable layout
-- Dark mode support (implied through the use of utility classes)
-- Verification status display and notifications toggle
-- Form submission handling with update functionality
-
-## Example
+## Base Usage
 ![Profile Screenshot](/images/profile.png)
 
-## Usage
 ``` vue
 <script setup>
 import { reactive, watch, ref } from 'vue'
