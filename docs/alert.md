@@ -19,7 +19,7 @@ import {
     <strong>info!</strong> Sample alert message type info
   </AlertMessage>
 
-  <AlertMessage type="warning" :icon="mdiAlert  ">
+  <AlertMessage type="warning" :icon="mdiAlert">
     <strong>warning!</strong> Sample alert message type warning
   </AlertMessage>
 
@@ -53,7 +53,7 @@ import {
     <strong>info!</strong> Sample alert message type info
   </AlertMessage>
 
-  <AlertMessage type="warning" :icon="mdiAlert  ">
+  <AlertMessage type="warning" :icon="mdiAlert">
     <strong>warning!</strong> Sample alert message type warning
   </AlertMessage>
 
@@ -65,7 +65,6 @@ import {
     <strong>success!</strong> Sample alert message type success
   </AlertMessage>
 </template>
-
 
 ```
 

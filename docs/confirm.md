@@ -20,8 +20,8 @@ const handleConfirmClick = () => {
 <template>
   <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick"/>
 </template>
-```
 
+```
 ## Destroy on Close
 ![Confirm Screenshot](/images/confirm1.png)
 

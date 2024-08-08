@@ -18,14 +18,24 @@ import {mdiAccountSupervisor} from '@mdi/js'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 </script>
 
-<Breadcrumb :items="breadcrumbs" :icon="mdiAccountSupervisor" title="Users" />
+<template>
+  <Breadcrumb :items="breadcrumbs" :icon="mdiAccountSupervisor" title="Users" />
+</template>
+
 ```
 
 ## Set width icon
 ```vue
+<script setup>
+  const iconSize = 24 // Kích thước icon có thể điều chỉnh
+</script>
+
+<template>
 <svg viewBox="0 0 24 24" :width="iconSize" :height="iconSize" class="inline-block">
   <path fill="currentColor" :d="path" />
 </svg>
+</template>
+
 ```
 
 ## API

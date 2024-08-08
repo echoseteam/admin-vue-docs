@@ -5,20 +5,36 @@
 
 ``` vue
 <script setup>
+import { ref } from 'vue'
 import BarChart from '@/components/Charts/BarChart.vue'
 import LineChart from '@/components/Charts/LineChart.vue'
 import BubbleChart from '@/components/Charts/BubbleChart.vue'
 import PieChart from '@/components/Charts/PieChart.vue'
 import DoughnutChart from '@/components/Charts/DoughnutChart.vue'
+
+const chartData = ref({
+  labels: ['January', 'February', 'March', 'April'],
+  datasets: [
+    {
+      label: 'Sales',
+      data: [30, 50, 70, 90],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+    }
+  ]
+})
 </script>
 
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-  <line-chart :data="chartData" class="h-72" />
-  <pie-chart :data="chartData" class="h-72" />
-  <doughnut-chart :data="chartData" class="h-72" />
-  <bubble-chart :data="chartData" class="h-72" />
-</div>
+<template>
+  <div v-if="chartData">
+    <BarChart :data="chartData" class="h-72" />
+    <LineChart :data="chartData" class="h-72" />
+    <PieChart :data="chartData" class="h-72" />
+    <DoughnutChart :data="chartData" class="h-72" />
+    <BubbleChart :data="chartData" class="h-72" />
+  </div>
+</template>
 
 ```
 
@@ -28,19 +44,25 @@ import DoughnutChart from '@/components/Charts/DoughnutChart.vue'
 <script setup>
 import BarChart from '@/components/Charts/BarChart.vue'
 </script>
-
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-</div>
+<template>
+  <div v-if="chartData">
+    <Bar-chart :data="chartData" class="h-72"/>
+  </div>
+</template>
 
 ```
 
 ## Height chart
 ![BarChart Screenshot](/images/bar_chart.png)
 ``` vue
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-</div>
+<script setup>
+import BarChart from '@/components/Charts/BarChart.vue'
+</script>
+<template>
+  <div v-if="chartData">
+    <Bar-chart :data="chartData" class="h-72"/>
+  </div>
+</template>
 
 ```
 

@@ -17,17 +17,19 @@ const handleConfirmClick = () => {
 }
 </script>
 
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+<template>
+  <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+</template>
 
 ```
-
 ## With offset
 ![Notice Screenshot](/images/notice.png)
 
 ``` vue
 <script setup>
 import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+import { EchoseAlert } from '@/plugins/EchoseAlert'
+import { useFlashMessage } from '@/plugins/FlashMessage'
 
 const flashMessage = useFlashMessage()
 
@@ -44,7 +46,9 @@ const handleConfirmClick = () => {
 }
 </script>
 
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+<template>
+  <BaseButton color="info" label="Notice message" outline @click="handleConfirmClick" />
+</template>
 
 ```
 
