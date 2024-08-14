@@ -4,43 +4,49 @@
 ![Chart-1 Screenshot](/images/chart1.png)
 
 ``` vue
-<script setup>
-import BarChart from '@/components/Charts/BarChart.vue'
-import LineChart from '@/components/Charts/LineChart.vue'
-import BubbleChart from '@/components/Charts/BubbleChart.vue'
-import PieChart from '@/components/Charts/PieChart.vue'
-import DoughnutChart from '@/components/Charts/DoughnutChart.vue'
-</script>
+<template>
+  <div v-if="chartData">
+    <bar-chart :data="chartData" class="h-72" />
+    <line-chart :data="chartData" class="h-72" />
+    <pie-chart :data="chartData" class="h-72" />
+    <doughnut-chart :data="chartData" class="h-72" />
+    <bubble-chart :data="chartData" class="h-72" />
+  </div>
+</template>
 
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-  <line-chart :data="chartData" class="h-72" />
-  <pie-chart :data="chartData" class="h-72" />
-  <doughnut-chart :data="chartData" class="h-72" />
-  <bubble-chart :data="chartData" class="h-72" />
-</div>
+<script setup>
+  import BarChart from '@/components/Charts/BarChart.vue'
+  import LineChart from '@/components/Charts/LineChart.vue'
+  import BubbleChart from '@/components/Charts/BubbleChart.vue'
+  import PieChart from '@/components/Charts/PieChart.vue'
+  import DoughnutChart from '@/components/Charts/DoughnutChart.vue'
+</script>
 
 ```
 
 ## Usage Example
 
 ```vue
-<script setup>
-import BarChart from '@/components/Charts/BarChart.vue'
-</script>
+<template>
+  <div v-if="chartData">
+    <bar-chart :data="chartData" class="h-72" />
+  </div>
+</template>
 
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-</div>
+<script setup>
+  import BarChart from '@/components/Charts/BarChart.vue'
+</script>
 
 ```
 
 ## Height chart
 ![BarChart Screenshot](/images/bar_chart.png)
 ``` vue
-<div v-if="chartData">
-  <bar-chart :data="chartData" class="h-72" />
-</div>
+<template>
+  <div v-if="chartData">
+    <bar-chart :data="chartData" class="h-72" />
+  </div>
+</template>
 
 ```
 
