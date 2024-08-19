@@ -4,46 +4,6 @@
 ![Profile Screenshot](/images/profile.png)
 
 ``` vue
-<script setup>
-import { reactive, watch, ref } from 'vue'
-import { useMainStore } from '@/stores/index'
-import { mdiAccount, mdiCheckDecagram } from '@mdi/js'
-import SectionMain from '@/components/SectionMain.vue'
-import CardBox from '@/components/CardBox.vue'
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import BaseButtons from '@/components/Forms/BaseButtons.vue'
-import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'
-import Breadcrumb from '@/components/Breadcrumb.vue'
-import UserAvatarCurrentUser from '@/components/UserAvatarCurrentUser.vue'
-import PillTag from '@/components/PillTag.vue'
-import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
-
-const mainStore = useMainStore()
-
-const profileForm = reactive({
-  name: mainStore.userName,
-  email: mainStore.userEmail,
-  phone: '',
-  address: ''
-})
-
-const breadcrumbs = ref([{ name: 'Dashboard', link_to: '/dashboard' }, { name: 'Your profile' }])
-
-const submitProfile = () => {
-  mainStore.setUser(profileForm)
-}
-
-const uploadedAvatar = ref(null)
-
-watch(uploadedAvatar, (newFile) => {
-  if (newFile) {
-    console.log('New avtar uploaded: ', newFile)
-  }
-})
-</script>
-
 <template>
   <LayoutAuthenticated>
     <SectionMain>
@@ -107,5 +67,44 @@ watch(uploadedAvatar, (newFile) => {
   </LayoutAuthenticated>
 </template>
 
+<script setup>
+  import { reactive, watch, ref } from 'vue'
+  import { useMainStore } from '@/stores/index'
+  import { mdiAccount, mdiCheckDecagram } from '@mdi/js'
+  import SectionMain from '@/components/SectionMain.vue'
+  import CardBox from '@/components/CardBox.vue'
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import BaseButtons from '@/components/Forms/BaseButtons.vue'
+  import LayoutAuthenticated from '@/layouts/LayoutAuthenticated.vue'
+  import Breadcrumb from '@/components/Breadcrumb.vue'
+  import UserAvatarCurrentUser from '@/components/UserAvatarCurrentUser.vue'
+  import PillTag from '@/components/PillTag.vue'
+  import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
+
+  const mainStore = useMainStore()
+
+  const profileForm = reactive({
+    name: mainStore.userName,
+    email: mainStore.userEmail,
+    phone: '',
+    address: ''
+  })
+
+  const breadcrumbs = ref([{ name: 'Dashboard', link_to: '/dashboard' }, { name: 'Your profile' }])
+
+  const submitProfile = () => {
+    mainStore.setUser(profileForm)
+  }
+
+  const uploadedAvatar = ref(null)
+
+  watch(uploadedAvatar, (newFile) => {
+    if (newFile) {
+      console.log('New avtar uploaded: ', newFile)
+    }
+  })
+</script>
 
 ```

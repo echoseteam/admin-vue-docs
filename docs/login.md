@@ -3,30 +3,6 @@
 ## Base Usage
 ![Login Screenshot](/images/login.png)
 ``` vue
-<script setup>
-import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
-import SectionFullScreen from '@/components/SectionFullScreen.vue'
-import CardBox from '@/components/CardBox.vue'
-import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import BaseButtons from '@/components/Forms/BaseButtons.vue'
-import LayoutGuest from '@/layouts/LayoutGuest.vue'
-import { RouterLink } from 'vue-router'
-
-const form = reactive({
-  login: 'john.doe',
-  pass: 'highly-secure-password-fYjUw-',
-  remember: true
-})
-const router = useRouter()
-const submit = () => {
-  router.push('/dashboard')
-}
-</script>
-
 <template>
   <LayoutGuest>
     <div class="flex flex-col md:flex-row min-h-screen">
@@ -114,4 +90,27 @@ const submit = () => {
   </LayoutGuest>
 </template>
 
+<script setup>
+  import { reactive } from 'vue'
+  import { useRouter } from 'vue-router'
+  import SectionFullScreen from '@/components/SectionFullScreen.vue'
+  import CardBox from '@/components/CardBox.vue'
+  import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import BaseButtons from '@/components/Forms/BaseButtons.vue'
+  import LayoutGuest from '@/layouts/LayoutGuest.vue'
+  import { RouterLink } from 'vue-router'
+
+  const form = reactive({
+    login: 'john.doe',
+    pass: 'highly-secure-password-fYjUw-',
+    remember: true
+  })
+  const router = useRouter()
+  const submit = () => {
+    router.push('/dashboard')
+  }
+</script>
 ```

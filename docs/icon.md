@@ -13,19 +13,23 @@ $ npm install @mdi/js
 ## Simple Usage
 ![User Screenshot](/images/user1.png)
 ```vue
-<script setup>
-import {mdiAccountSupervisor} from '@mdi/js'
-import Breadcrumb from '@/components/Breadcrumb.vue'
-</script>
+<template>
+  <Breadcrumb :items="breadcrumbs" :icon="mdiAccountSupervisor" title="Users" />
+</template>
 
-<Breadcrumb :items="breadcrumbs" :icon="mdiAccountSupervisor" title="Users" />
+<script setup>
+  import {mdiAccountSupervisor} from '@mdi/js'
+  import Breadcrumb from '@/components/Breadcrumb.vue'
+</script>
 ```
 
 ## Set width icon
 ```vue
-<svg viewBox="0 0 24 24" :width="iconSize" :height="iconSize" class="inline-block">
-  <path fill="currentColor" :d="path" />
-</svg>
+<template>
+  <svg viewBox="0 0 24 24" :width="iconSize" :height="iconSize" class="inline-block">
+    <path fill="currentColor" :d="path" />
+  </svg>
+</template>
 ```
 
 ## API

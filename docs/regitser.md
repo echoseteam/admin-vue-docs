@@ -3,29 +3,6 @@
 ## Base Usage
 ![Register Screenshot](/images/register.png)
 ``` vue
-<script setup>
-import { RouterLink } from 'vue-router'
-import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import CardBox from '@/components/CardBox.vue'
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import Image from '@/components/Image.vue'
-import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
-
-const form = reactive({
-  email: ''
-})
-
-const router = useRouter()
-const submit = () => {
-  router.push('/dashboard')
-}
-
-const cardClass = ref('default-class')
-</script>
-
 <template>
   <div class="flex justify-evely min-h-screen">
     <div class="hidden md:block w-1/2 relative">
@@ -104,4 +81,26 @@ const cardClass = ref('default-class')
   </div>
 </template>
 
+<script setup>
+  import { RouterLink } from 'vue-router'
+  import { reactive, ref } from 'vue'
+  import { useRouter } from 'vue-router'
+  import CardBox from '@/components/CardBox.vue'
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import Image from '@/components/Image.vue'
+  import FormCheckRadio from '@/components/Forms/FormCheckRadio.vue'
+
+  const form = reactive({
+    email: ''
+  })
+
+  const router = useRouter()
+  const submit = () => {
+    router.push('/dashboard')
+  }
+
+  const cardClass = ref('default-class')
+</script>
 ```

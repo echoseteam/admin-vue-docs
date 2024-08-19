@@ -4,48 +4,50 @@
 ![Notifile Screenshot](/images/notifile.png)
 
 ``` vue
+<template>
+  BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+</template>
+
 <script setup>
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import { EchoseAlert } from '@/plugins/EchoseAlert '
 
-const handleConfirmClick = () => {
-  EchoseAlert.fire({
-    title:
-      'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
-    showCancelButton: true
-  }).then(() => {})
-}
+  const handleConfirmClick = () => {
+    EchoseAlert.fire({
+      title:
+        'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
+      showCancelButton: true
+    }).then(() => {})
+  }
 </script>
-
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
-
 ```
 
 ## With offset
 ![Notice Screenshot](/images/notice.png)
 
 ``` vue
+<template>
+  <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+</template>
+
 <script setup>
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import { EchoseAlert } from '@/plugins/EchoseAlert '
 
-const flashMessage = useFlashMessage()
+  const flashMessage = useFlashMessage()
 
-const showFlashMessage = () => {
-  flashMessage.fire('This is a flash message!', 'warning')
-}
+  const showFlashMessage = () => {
+    flashMessage.fire('This is a flash message!', 'warning')
+  }
 
-const handleConfirmClick = () => {
-  EchoseAlert.fire({
-    title:
-      'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
-    showCancelButton: true
-  }).then(() => {})
-}
+  const handleConfirmClick = () => {
+    EchoseAlert.fire({
+      title:
+        'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
+      showCancelButton: true
+    }).then(() => {})
+  }
 </script>
-
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
-
 ```
 
 ## API
