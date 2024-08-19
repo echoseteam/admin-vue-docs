@@ -48,6 +48,7 @@ export default defineConfig({
           { text: 'Card box', link: '/card-box.html' },
           { text: 'Image', link: '/image.html' },
           { text: 'Chart', link: '/chart.html' },
+          { text: 'Paginate', link: '/paginate.html' },
         ]
       },
       {
