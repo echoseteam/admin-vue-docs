@@ -1,7 +1,7 @@
 # Table Component
 
 ## Base table
-![Table Screenshot](/images/table.png)
+![Table Screenshot](/images/table1.png)
 
 ``` vue
 <template>

@@ -6,7 +6,7 @@
 
 Dashboard with Google Analytics, recent posts, error logs...
 
-![Dashboard Screenshot](/images/dashboard.png)
+![Dashboard Screenshot](/images/dashboard1.png)
 
 ## Users
 Users along with functions such as: search, pagination, edit, delete
@@ -49,7 +49,7 @@ Components includes: table, form and notification
 
 - Tables
 
-![Table Screenshot](/images/table.png)
+![Table Screenshot](/images/table1.png)
 
 - Forms
 
