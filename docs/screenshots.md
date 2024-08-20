@@ -45,31 +45,43 @@ Authentication includes: login, registration and forgotten password
 ![Forgot password Screenshot](/images/forgotpassword.png)
 
 ## Components
-Components includes: table, form and notification
+Components includes: table, form, notification and echoebutton
 
 - Tables
 
-![Table Screenshot](/images/table1.png)
+![Table Screenshot](/images/table2.png)
 
 - Forms
 
-![Form Screenshot](/images/form.png)
+![Form Screenshot](/images/form1.png)
 
 - Notifications
 
-![Notification Screenshot](/images/notification.png)
+![Notification Screenshot](/images/notification1.png)
+
+- Echoebutton
+
+![Echoebutton Screenshot](/images/echoebutton.png)
 
 
 ## Pages
-Pages includes: Profile, Blank page
+Pages includes: Profile, Blank page, Page 404 and Page error
 
 - Profile
 
-![Profile Screenshot](/images/profile.png)
+![Profile Screenshot](/images/profile1.png)
 
 - Blank page
 
-![Blank page Screenshot](/images/blank_page.png)
+![Blank page Screenshot](/images/blank_page1.png)
+
+- Page 404
+
+![Page 404 Screenshot](/images/page404.png)
+
+- Page error
+
+![Page 404 Screenshot](/images/page500.png)
 
 
 

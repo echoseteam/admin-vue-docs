@@ -1,7 +1,7 @@
 # Profile Layout
 
 ## Base Usage
-![Profile Screenshot](/images/profile.png)
+![Profile Screenshot](/images/profile1.png)
 
 ``` vue
 <template>

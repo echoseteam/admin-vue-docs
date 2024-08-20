@@ -15,13 +15,13 @@ export default defineConfig({
         text: 'Screenshots',
         link: '/screenshots'
       },
-      {
-        text: 'Prologue',
-        items: [
-          { text: 'Release Notes', link: '/releases.html' },
-          { text: 'File Structures ', link: '/structures.html' },
-        ]
-      },
+      // {
+      //   text: 'Prologue',
+      //   items: [
+      //     { text: 'Release Notes', link: '/releases.html' },
+      //     { text: 'File Structures ', link: '/structures.html' },
+      //   ]
+      // },
       {
         text: 'Getting Started',
         items: [
