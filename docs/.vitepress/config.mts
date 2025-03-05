@@ -15,13 +15,13 @@ export default defineConfig({
         text: 'Screenshots',
         link: '/screenshots'
       },
-      {
-        text: 'Prologue',
-        items: [
-          { text: 'Release Notes', link: '/releases.html' },
-          { text: 'File Structures ', link: '/structures.html' },
-        ]
-      },
+      // {
+      //   text: 'Prologue',
+      //   items: [
+      //     { text: 'Release Notes', link: '/releases.html' },
+      //     { text: 'File Structures ', link: '/structures.html' },
+      //   ]
+      // },
       {
         text: 'Getting Started',
         items: [
@@ -48,6 +48,7 @@ export default defineConfig({
           { text: 'Card box', link: '/card-box.html' },
           { text: 'Image', link: '/image.html' },
           { text: 'Chart', link: '/chart.html' },
+          { text: 'Paginate', link: '/paginate.html' },
         ]
       },
       {

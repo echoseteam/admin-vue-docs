@@ -3,24 +3,6 @@
 ## Base Usage
 ![Forgot Password Screenshot](/images/forgotpassword.png)
 ``` vue
-<script setup>
-import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
-import CardBox from '@/components/CardBox.vue'
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import Image from '@/components/Image.vue'
-
-const form = reactive({
-  email: ''
-})
-
-const router = useRouter()
-const submit = () => {
-  router.push('/dashboard')
-}
-</script>
 <template>
   <div class="flex min-h-screen">
     <div class="hidden xl:block xl:w-2/3 relative">
@@ -50,4 +32,22 @@ const submit = () => {
   </div>
 </template>
 
+<script setup>
+  import { reactive } from 'vue'
+  import { useRouter } from 'vue-router'
+  import CardBox from '@/components/CardBox.vue'
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import Image from '@/components/Image.vue'
+
+  const form = reactive({
+    email: ''
+  })
+
+  const router = useRouter()
+  const submit = () => {
+    router.push('/dashboard')
+  }
+</script>
 ```

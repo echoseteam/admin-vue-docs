@@ -4,14 +4,16 @@
 ![Input Screenshot](/images/input.png)
 
 ``` vue
-<script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-</script>
+<template>
+  <FormField label="Fullname">
+    <FormControl v-model="form.name" />
+  </FormField>
+</template>
 
-<FormField label="Fullname">
-  <FormControl v-model="form.name" />
-</FormField>
+<script setup>
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+</script>
 
 ```
 
@@ -19,17 +21,6 @@ import FormControl from '@/components/Forms/FormControl.vue'
 Make the Input clearable with the clearable attribute
 ![Clearable Screenshot](/images/clearable.png)
 ``` vue
-<script setup>
-import { ref } from 'vue'
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-const searchQuery = ref('')
-
-const handleClear = () => {
-  searchQuery.value = ''
-}
-</script>
-
 <template>
   <FormField>
     <FormControl
@@ -41,23 +32,36 @@ const handleClear = () => {
   </FormField>
 </template>
 
+<script setup>
+  import { ref } from 'vue'
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+  const searchQuery = ref('')
+
+  const handleClear = () => {
+    searchQuery.value = ''
+  }
+</script>
+
 ```
 
 ## Date
 
 ![Input date Screenshot](/images/input_date.png)
 ``` vue
-<script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import FormControl from '@/components/Forms/FormControl.vue'
-</script>
+<template>
+  <FormField label="Start date" class="flex-1">
+    <FormControl v-model="form.start_date" type="date" />
+  </FormField>
+  <FormField label="Due date" class="flex-1">
+    <FormControl v-model="form.due_date" type="date" />
+  </FormField>
+</template>
 
-<FormField label="Start date" class="flex-1">
-  <FormControl v-model="form.start_date" type="date" />
-</FormField>
-<FormField label="Due date" class="flex-1">
-  <FormControl v-model="form.due_date" type="date" />
-</FormField>
+<script setup>
+  import FormField from '@/components/Forms/FormField.vue'
+  import FormControl from '@/components/Forms/FormControl.vue'
+</script>
 
 ```
 
@@ -66,14 +70,16 @@ import FormControl from '@/components/Forms/FormControl.vue'
 ![Description date Screenshot](/images/input_description.png)
 
 ``` vue
-<script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import Editor from '@/components/Forms/VueQuillEditor.vue'
-</script>
+<template>
+  <FormField label="Description">
+    <Editor v-model="form.description" />
+  </FormField>
+</template>
 
-<FormField label="Description">
-  <Editor v-model="form.description" />
-</FormField>
+<script setup>
+  import FormField from '@/components/Forms/FormField.vue'
+  import Editor from '@/components/Forms/VueQuillEditor.vue'
+</script>
 
 ```
 
@@ -82,24 +88,26 @@ import Editor from '@/components/Forms/VueQuillEditor.vue'
 ![Select date Screenshot](/images/select.png)
 
 ``` vue
-<script setup>
-import FormField from '@/components/Forms/FormField.vue'
-import Editor from '@/components/Forms/VueQuillEditor.vue'
-</script>
+<template>
+  <FormField label="Assign to">
+    <FormControl
+      v-model="form.assign_to"
+      :options="assignOptions"
+      type="select"
+      placeholder="Select assignee"
+    >
+      <option value="">Select assignee</option>
+      <option v-for="option in assignOptions" :key="option.value" :value="option.value">
+        {{ option.label }}
+      </option>
+    </FormControl>
+  </FormField>
+</template>
 
-<FormField label="Assign to">
-  <FormControl
-    v-model="form.assign_to"
-    :options="assignOptions"
-    type="select"
-    placeholder="Select assignee"
-  >
-    <option value="">Select assignee</option>
-    <option v-for="option in assignOptions" :key="option.value" :value="option.value">
-      {{ option.label }}
-    </option>
-  </FormControl>
-</FormField>
+<script setup>
+  import FormField from '@/components/Forms/FormField.vue'
+  import Editor from '@/components/Forms/VueQuillEditor.vue'
+</script>
 
 ```
 

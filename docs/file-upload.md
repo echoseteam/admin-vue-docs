@@ -4,45 +4,48 @@
 ![Upload Screenshot](/images/upload1.png)
 
 ``` vue
+<template>
+  <FormField label="Avatar">
+    <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+  </FormField>
+</template>
+
 <script setup>
-import { reactive } from 'vue'
-import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
-import FormField from '@/components/Forms/FormField.vue'
+  import { reactive } from 'vue'
+  import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
+  import FormField from '@/components/Forms/FormField.vue'
 
-const customElementsForm = reactive({
-  checkbox: ['lorem'],
-  radio: 'one',
-  switch: ['one'],
-  file: null
-})
+  const customElementsForm = reactive({
+    checkbox: ['lorem'],
+    radio: 'one',
+    switch: ['one'],
+    file: null
+  })
 </script>
-
-<FormField label="Avatar">
-  <FormFilePicker v-model="customElementsForm.file" label="Upload" />
-</FormField>
-
 ```
 
 ## User Avatar
 ![Avatar Screenshot](/images/avatar.png)
 
 ``` vue
+<template>
+  <FormField label="Avatar">
+    <FormFilePicker v-model="customElementsForm.file" label="Upload" />
+  </FormField>
+</template>
+
 <script setup>
-import { reactive } from 'vue'
-import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
-import FormField from '@/components/Forms/FormField.vue'
+  import { reactive } from 'vue'
+  import FormFilePicker from '@/components/Forms/FormFilePicker.vue'
+  import FormField from '@/components/Forms/FormField.vue'
 
-const customElementsForm = reactive({
-  checkbox: ['lorem'],
-  radio: 'one',
-  switch: ['one'],
-  file: null
-})
+  const customElementsForm = reactive({
+    checkbox: ['lorem'],
+    radio: 'one',
+    switch: ['one'],
+    file: null
+  })
 </script>
-
-<FormField label="Avatar">
-  <FormFilePicker v-model="customElementsForm.file" label="Upload" />
-</FormField>
 
 ```
 

@@ -4,42 +4,44 @@
 ![Confirm Screenshot](/images/confirm1.png)
 
 ``` vue
+<template>
+  <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+</template>
+
 <script setup>
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import { EchoseAlert } from '@/plugins/EchoseAlert '
 
-const handleConfirmClick = () => {
-  EchoseAlert.fire({
-    title:
-      'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
-    showCancelButton: true
-  }).then(() => {})
-}
+  const handleConfirmClick = () => {
+    EchoseAlert.fire({
+      title:
+        'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
+      showCancelButton: true
+    }).then(() => {})
+  }
 </script>
-
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
-
 ```
 
 ## Destroy on Close
 ![Confirm Screenshot](/images/confirm1.png)
 
 ``` vue
+<template>
+  <BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
+</template>
+
 <script setup>
-import BaseButton from '@/components/Forms/BaseButton.vue'
-import { EchoseAlert } from '@/plugins/EchoseAlert '
+  import BaseButton from '@/components/Forms/BaseButton.vue'
+  import { EchoseAlert } from '@/plugins/EchoseAlert '
 
-const handleConfirmClick = () => {
-  EchoseAlert.fire({
-    title:
-      'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
-    showCancelButton: true
-  }).then(() => {})
-}
+  const handleConfirmClick = () => {
+    EchoseAlert.fire({
+      title:
+        'Product deletion process: Store ID, display confirmation dialog, and call delete function upon user approval',
+      showCancelButton: true
+    }).then(() => {})
+  }
 </script>
-
-<BaseButton color="info" label="Confirm message" outline @click="handleConfirmClick" />
-
 ```
 
 ## API
